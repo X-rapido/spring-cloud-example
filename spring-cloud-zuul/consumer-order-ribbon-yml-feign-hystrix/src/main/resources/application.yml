@@ -1,0 +1,29 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: consumer-order-ribbon-yml-feign-hystrix
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka
+
+# 指定 provider-user 生产者服务配置的负载均衡算法
+provider-user:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+# feign 超时设置（10秒），默认1秒：https://www.jb51.net/article/106944.htm
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 10000
+
+
+
+# 给指定的 feign 设置日志基本
+logging:
+  level:
+    com.example.feign.UserClient: debug
+
+
+info:
+  app.name: 这是一个 SpringCloud 项目的订单消费者：consumer-order-ribbon-yml-feign-hystrix
+  author: 刘仁奎

@@ -1,0 +1,23 @@
+server:
+  port: 8500
+
+spring:
+  application:
+    name: spring-cloud-dashboard-turbine
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka
+
+
+# 配置 turbine
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: consumer-order-ribbon-yml-feign-hystrix,consumer-order-ribbon-yml-feign-hystrix-fallback
+  cluster-name-expression: "'default'"
+  instanceUrlSuffix: /hystrix.stream
+
+info:
+  app.name: 这是一个 SpringCloud 项目 Hystrix Turbine 监控者：spring-cloud-dashboard-turbine
+  author: 刘仁奎

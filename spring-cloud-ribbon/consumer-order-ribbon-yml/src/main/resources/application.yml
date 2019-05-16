@@ -1,0 +1,19 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: consumer-order-ribbon-yml
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka
+
+# 指定 provider-user 生产者服务配置的负载均衡算法
+provider-user:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+
+info:
+  app.name: 这是一个 SpringCloud 项目的订单消费者：consumer-order-ribbon-yml
+  author: 刘仁奎

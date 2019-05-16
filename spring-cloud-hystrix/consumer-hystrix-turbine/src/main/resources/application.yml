@@ -1,0 +1,21 @@
+server:
+  port: 8600
+spring:
+  application:
+    name: consumer-hystrix-turbine
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka
+
+
+# 配置 turbine
+turbine:
+  aggregator:
+    clusterConfig: CONSUMER-ORDER-RIBBON-YML-FEIGN-HYSTRIX # 聚合哪些集群，多个使用","分割 默认为default
+  appConfig: consumer-order-ribbon-yml-feign-hystrix  # 要监的对服务
+
+
+info:
+  app.name: 这是一个 SpringCloud 项目 Hystrix Turbine 监控者：consumer-hystrix-turbine
+  author: 刘仁奎

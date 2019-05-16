@@ -1,0 +1,15 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: consumer-order
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka
+
+
+
+info:
+  app.name: 这是一个 SpringCloud 项目的订单消费者：consumer-order
+  author: 刘仁奎

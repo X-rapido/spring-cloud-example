@@ -1,0 +1,34 @@
+server:
+  port: 9500
+spring:
+  application:
+    name: spring-cloud-getway-zuul-fallback-filter
+  security: # 配置访问的登录权限
+    user:
+      name: tingfeng
+      password: 123456
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka
+  instance:
+    prefer-ip-address: true
+
+zuul:
+  routes: # 配置路由映射
+    provider-user: /abc/**       # 将 provider-user 映射到 /abc
+  # ignored-services:            # 忽略映射
+
+# 开启 endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+info:
+  app.name: 这是一个 SpringCloud 构建的 API 网关项目：spring-cloud-getway-zuul-fallback-filter
+  author: 刘仁奎
+
+

@@ -1,0 +1,36 @@
+server:
+  port: 9501
+spring:
+  application:
+    name: spring-cloud-getwy-zuul
+  security: # 配置访问的登录权限
+    user:
+      name: tingfeng
+      password: 123456
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka
+  instance:
+    prefer-ip-address: true
+
+zuul:
+  routes: # 配置路由映射
+    abcdef:               # 随便，保证唯一
+      path: /abc/**       # 映射路径
+      serviceId: provider-user
+
+
+# 开启 endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+info:
+  app.name: 这是一个 SpringCloud 构建的 API 网关项目：spring-cloud-getwy-zuul
+  author: 刘仁奎
+
+

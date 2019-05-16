@@ -1,0 +1,16 @@
+server:
+  port: 10000
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    registerWithEureka: false # 禁止注册到 eureka
+    fetchRegistry: false      # 禁止抓取 eureka 注册信息
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka/
+
+logging.level.com.netflix:
+  eureka: OFF
+  discovery: OFF

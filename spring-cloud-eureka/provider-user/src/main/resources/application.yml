@@ -1,0 +1,15 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: provider-user
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10000/eureka
+
+
+
+info:
+  app.name: 这是一个 SpringCloud 项目的用户消息提供者：provider-user
+  author: 刘仁奎
